@@ -228,7 +228,8 @@ export default function ChatPage() {
                                 sx={{
                                     display: 'flex',
                                     gap: 2,
-                                    alignItems: 'flex-start'
+                                    alignItems: 'flex-start',
+                                    flexDirection: message.sender === 'user' ? 'row-reverse' : 'row',
                                 }}
                             >
                                 {/* Avatar */}
@@ -246,8 +247,13 @@ export default function ChatPage() {
                                 </Avatar>
 
                                 {/* Content */}
-                                <Box sx={{ flexGrow: 1 }}>
-                                    <Typography variant="subtitle2" sx={{ fontWeight: 600, mb: 0.5 }}>
+                                <Box sx={{
+                                    maxWidth: '80%',
+                                    bgcolor: message.sender === 'user' ? '#f0f4f9' : 'transparent',
+                                    p: message.sender === 'user' ? 2 : 0,
+                                    borderRadius: message.sender === 'user' ? '20px 4px 20px 20px' : 0,
+                                }}>
+                                    <Typography variant="subtitle2" sx={{ fontWeight: 600, mb: 0.5, textAlign: message.sender === 'user' ? 'right' : 'left' }}>
                                         {message.sender === 'bot' ? 'AI Assistant' : 'You'}
                                     </Typography>
                                     <Typography variant="body1" sx={{ color: '#1f1f1f', lineHeight: 1.6, whiteSpace: 'pre-wrap' }}>
