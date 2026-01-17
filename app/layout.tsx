@@ -2,6 +2,8 @@ import * as React from 'react';
 import type { Metadata } from "next";
 import ThemeRegistry from '@/components/ThemeRegistry';
 
+import Navbar from '@/components/Navbar';
+
 export const metadata: Metadata = {
   title: "Next.js App Router + MUI",
   description: "Next.js App Router + MUI v6",
@@ -15,7 +17,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <ThemeRegistry>{children}</ThemeRegistry>
+        <ThemeRegistry>
+          <Navbar />
+          {children}
+        </ThemeRegistry>
       </body>
     </html>
   );

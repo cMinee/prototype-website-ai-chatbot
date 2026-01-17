@@ -54,7 +54,7 @@ export default function Home() {
         </Grid>
 
         {/* Features */}
-        <Box sx={{ mt: { xs: 6, md: 10 } }}>
+        <Box id="services" sx={{ mt: { xs: 6, md: 10 }, scrollMarginTop: '80px' }}>
           <Typography variant="h5" sx={{ fontWeight: 600, mb: 3 }}>
             บริการของเรา
           </Typography>
