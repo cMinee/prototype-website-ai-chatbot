@@ -77,7 +77,13 @@ export default function Navbar() {
 
                 {/* Right Side: Register and Login */}
                 <Box sx={{ display: 'flex', gap: 1 }}>
-                    <Button color="inherit">สมัครสมาชิก</Button>
+                    <Button
+                        color="inherit"
+                        component={Link}
+                        href="/pricing"
+                    >
+                        สมัครสมาชิก
+                    </Button>
                     <Button variant="outlined" color="primary">เข้าสู่ระบบ</Button>
                 </Box>
             </Toolbar>
